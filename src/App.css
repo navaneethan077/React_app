@@ -3,16 +3,20 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
 .logo {
   height: 6em;
   padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
+  transform: scale(1.05);
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
@@ -34,9 +38,52 @@
 }
 
 .card {
+  background-color: #ffffff;
   padding: 2em;
+  margin: 1.5em auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
 }
 
+.card:hover {
+  transform: translateY(-5px) scale(1.03); /* Slightly scale on hover */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Increase shadow for more depth */
+}
+
+.card:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(100, 204, 255, 0.7); /* Outline for focus state */
+  transform: translateY(-5px) scale(1.03);
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05); /* Slight zoom effect on image */
+}
+
+/* For responsiveness, ensure the card adapts to smaller screens */
+@media (max-width: 600px) {
+  .card {
+    padding: 1.5em;
+    margin: 1em auto;
+  }
+}
+
+
 .read-the-docs {
-  color: #888;
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+.read-the-docs:hover {
+  color: #333;
 }
